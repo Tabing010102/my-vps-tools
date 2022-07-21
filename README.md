@@ -1,5 +1,5 @@
-# my-vps-tools
-My VPS Tools  
+# my-vps-toys
+My VPS Toys  
 
 # **ALL SHIT MOUNTAINS**
 # **DO NOT USE**
