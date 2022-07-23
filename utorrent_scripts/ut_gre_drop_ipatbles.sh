@@ -1,0 +1,1 @@
+iptables -t filter -A OUTPUT -o tun_olink -m owner --uid-owner utuser -j DROP
