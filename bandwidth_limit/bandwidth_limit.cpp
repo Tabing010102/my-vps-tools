@@ -8,7 +8,7 @@
 char CONFIG_FILE[] = "config";  // config file name
 int DEBUG = 0;
 int LIMIT_DEVICE_NUM = -1;      // limit network interface count
-char** LIMIT_DEVICES;         // limit network interfaces
+char** LIMIT_DEVICES;           // limit network interfaces
 int RESET_DAY = -1;             // bandwidth reset day
 // bandwidth limit mode
 // ul: upload only
@@ -305,12 +305,16 @@ bool UpdateDay() {
 bool CheckBandwidth() {
     if (strcmp(LIMIT_MODE, "ul") == 0) {
         if (CUR_UL >= UL_LIMIT) return true;
+        else return false;
     } else if (strcmp(LIMIT_MODE, "uldl") == 0) {
         if (CUR_ULDL >= ULDL_LIMIT) return true;
+        else return false;
     } else if (strcmp(LIMIT_MODE, "maxuldl") == 0) {
         if (CUR_UL >= UL_LIMIT || CUR_DL >= DL_LIMIT) return true;
+        else return false;
     } else {
         LogErrorAndExit("unknown limit mode", "CheckBandwidth");
+        return false;
     }
 }
 
